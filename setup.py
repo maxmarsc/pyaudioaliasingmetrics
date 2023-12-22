@@ -6,7 +6,7 @@ with open("README.md", encoding="utf-8") as fh:
 
 setup(
     name="pyaudioaliasingmetrics",
-    version="0.1.0",
+    version="0.1.3",
     description="Computes SNR and SINAD from spectral data",
     author="Maxime COUTANT",
     author_email="maxime.coutant@protonmail.com",

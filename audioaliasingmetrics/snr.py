@@ -2,7 +2,7 @@ import numpy as np
 from numba import njit
 from typing import Union
 
-from utils import *
+from .utils import *
 
 
 @njit
