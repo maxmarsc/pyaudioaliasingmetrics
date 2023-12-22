@@ -80,16 +80,17 @@ def snr(
             harmonics = np.array(harmonics, dtype=np.int32)
 
         # Sort if needed
-        harmonics = np.sort(harmonics)
-        if harmonics[0] < 2:
-            raise ValueError("Harmonics values must be >=2")
-        top_harmonic = floor((samplerate / 2) / fundamental)
-        if harmonics[-1] > top_harmonic:
-            raise ValueError(
-                "Given your fundamental, the highest harmonic value should be {}".format(
-                    top_harmonic
+        if harmonics.shape[0] > 0:
+            harmonics = np.sort(harmonics)
+            if harmonics[0] < 2:
+                raise ValueError("Harmonics values must be >=2")
+            top_harmonic = floor((samplerate / 2) / fundamental)
+            if harmonics[-1] > top_harmonic:
+                raise ValueError(
+                    "Given your fundamental, the highest harmonic value should be {}".format(
+                        top_harmonic
+                    )
                 )
-            )
 
     else:
         harmonics = harmonics.compute_harmonics(fundamental, samplerate)

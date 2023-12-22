@@ -162,4 +162,4 @@ def find_peak_bins(
         peak_bins.append(new_bin)
         crt_val = new_val
 
-    return np.array(peak_bins)
+    return np.array(peak_bins, dtype=np.int32)
